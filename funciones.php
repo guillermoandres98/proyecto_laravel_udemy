@@ -36,5 +36,5 @@
         }
     };
 
-    echo conParametros(40, 5, '/');
+    echo conParametros(40, 5, '+');
 ?>
