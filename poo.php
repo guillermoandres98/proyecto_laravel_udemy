@@ -24,6 +24,9 @@
         public function getNombre(){
             return $this->nombre;
         }
+        public function getParametrosw($n1, $n2){
+
+        }
         //metodos estaticos
     }
 
