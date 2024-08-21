@@ -5,12 +5,33 @@
 if (isset($_POST['name'], $_POST['email'])) {
 
     //para capturar datos y mostrar
-    die("name: " . $_POST['name'] . " | Email: " . $_POST['email']);
+    //die("name: " . $_POST['name'] . " | Email: " . $_POST['email']);
 
     //para capturar fotos
+    //print_r($_FILES['foto']);
+    if($_FILES['foto']['type'] =='image/jpeg' or $_FILES['foto']['type'] =='image/png'){
+
+        switch($_FILES['foto']['type']) {
+            case 'image/jepg':
+                $archivo = time().".jpg";
+            break;
+            case 'image/png':
+                $archivo = time().".png";
+            break;
+        }
+
+        copy($_FILES['foto']['tmp_name'],'upload/'.$archivo);
+
+        echo $_FILES['foto']['type'];
+        exit();
+    }
     
 
-}
+}/* else{
+    //redireccionar en php
+    header("Location: formulario.php");
+    exit();
+} */
 
 
 ?>
